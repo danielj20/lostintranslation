@@ -107,5 +107,3 @@ def makePrompt():
 while True:
     input("Next prompt? ")
     print(makePrompt())
-
-
