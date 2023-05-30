@@ -1,6 +1,5 @@
 import random
 
-
 def makeWord():
     var = random.randint(1, 8)
     vowel = ["a", "e", "i", "o", "u"]
@@ -37,6 +36,9 @@ def makeWord():
 def structure():
     return random.choice(["OVS", "SVO", "SOV", "OSV", "VSO", "VOS"])
 
+def adjective_order():
+    return random.choice(["ADJ + NOUN", "NOUN + ADJ"])
+
 
 
 
@@ -52,25 +54,30 @@ Cat: {makeWord()}
 Dog: {makeWord()}
 House: {makeWord()}
 Tree: {makeWord()}
-to be (is, am, are): {makeWord()}
-to run (runs, run): {makeWord()}
-to want (wants, want): {makeWord()}
-to eat (eats, eat): {makeWord()}
-to see (sees, see): {makeWord()}
-on: {makeWord()}
-in: {makeWord()}
-in front of: {makeWord()}
-behind: {makeWord()}
+Very: {makeWord()}
+Long: {makeWord()}
+Tall: {makeWord()}
+Wide: {makeWord()}
+To be (is, am, are): {makeWord()}
+To run (runs, run): {makeWord()}
+To want (wants, want): {makeWord()}
+To eat (eats, eat): {makeWord()}
+To see (sees, see): {makeWord()}
+On: {makeWord()}
+In: {makeWord()}
+In front of: {makeWord()}
+Behind: {makeWord()}
 
 
 STRUCTURE: {structure()}
+ADJECTIVE ORDER: {adjective_order()}
 """
 )
 
 
 def makePrompt():
-    subjects = ["I","You","Your dog","Your cat","The dog","The cat","A dog","A cat","My dog","My cat"]
-    objects = ["Me","You","Your dog","Your cat","The dog","The cat","A dog","A cat","My dog","My cat", "Your tree","Your house","The tree","The house","A tree","A house","My tree","My house"]
+    subjects = ["I","You","I","You","I","You","I","You","I","You","I","You","I","You","I","You","Your dog","Your cat","The dog","The cat","A dog","A cat","My dog","My cat",'The long cat', 'The long dog', 'The tall cat', 'The tall dog', 'The wide cat', 'The wide dog', 'The very long cat', 'The very long dog', 'The very wide cat', 'The very wide dog', 'The very tall cat', 'The very tall dog', 'A long cat', 'A long dog', 'A tall cat', 'A tall dog', 'A wide cat', 'A wide dog', 'A very long cat', 'A very long dog', 'A very wide cat', 'A very wide dog', 'A very tall cat', 'A very tall dog', 'My long cat', 'My long dog', 'My tall cat', 'My tall dog', 'My wide cat', 'My wide dog', 'My very long cat', 'My very long dog', 'My very wide cat', 'My very wide dog', 'My very tall cat', 'My very tall dog', 'Your long cat', 'Your long dog', 'Your tall cat', 'Your tall dog', 'Your wide cat', 'Your wide dog', 'Your very long cat', 'Your very long dog', 'Your very wide cat', 'Your very wide dog', 'Your very tall cat', 'Your very tall dog']
+    objects = ["Me","You","Me","You","Me","You","Me","You","Me","You","Me","You","Me","You","Me","You","Your dog","Your cat","The dog","The cat","A dog","A cat","My dog","My cat", "Your tree","Your house","The tree","The house","A tree","A house","My tree","My house",'The long tree', 'The long house', 'The long cat', 'The long dog', 'The tall tree', 'The tall house', 'The tall cat', 'The tall dog', 'The wide tree', 'The wide house', 'The wide cat', 'The wide dog', 'The very long tree', 'The very long house', 'The very long cat', 'The very long dog', 'The very wide tree', 'The very wide house', 'The very wide cat', 'The very wide dog', 'The very tall tree', 'The very tall house', 'The very tall cat', 'The very tall dog', 'A long tree', 'A long house', 'A long cat', 'A long dog', 'A tall tree', 'A tall house', 'A tall cat', 'A tall dog', 'A wide tree', 'A wide house', 'A wide cat', 'A wide dog', 'A very long tree', 'A very long house', 'A very long cat', 'A very long dog', 'A very wide tree', 'A very wide house', 'A very wide cat', 'A very wide dog', 'A very tall tree', 'A very tall house', 'A very tall cat', 'A very tall dog', 'My long tree', 'My long house', 'My long cat', 'My long dog', 'My tall tree', 'My tall house', 'My tall cat', 'My tall dog', 'My wide tree', 'My wide house', 'My wide cat', 'My wide dog', 'My very long tree', 'My very long house', 'My very long cat', 'My very long dog', 'My very wide tree', 'My very wide house', 'My very wide cat', 'My very wide dog', 'My very tall tree', 'My very tall house', 'My very tall cat', 'My very tall dog', 'Your long tree', 'Your long house', 'Your long cat', 'Your long dog', 'Your tall tree', 'Your tall house', 'Your tall cat', 'Your tall dog', 'Your wide tree', 'Your wide house', 'Your wide cat', 'Your wide dog', 'Your very long tree', 'Your very long house', 'Your very long cat', 'Your very long dog', 'Your very wide tree', 'Your very wide house', 'Your very wide cat', 'Your very wide dog', 'Your very tall tree', 'Your very tall house', 'Your very tall cat', 'Your very tall dog']
     verbs = ["to see","to eat","to want","to want to see","to want to eat", "to be", "to want to be"]
     tr_verbs = ["to see","to eat","to want to see","to want to eat", "to run", "to want to run"]
     tr_verbs_plus_be = ["to see","to eat","to want to see","to want to eat", "to run", "to want to run", "to be", "to want to be"]
@@ -100,3 +107,5 @@ def makePrompt():
 while True:
     input("Next prompt? ")
     print(makePrompt())
+
+
