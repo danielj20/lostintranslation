@@ -1,5 +1,4 @@
 import random
-from flask import Flask
 import logging
 import time
 import datetime
@@ -269,13 +268,6 @@ def makePrompt():
         "translation": translation
     }
 
-
-
-
-
-app = Flask(__name__)
-log = logging.getLogger('werkzeug')
-log.disabled = True
 
 while True:
     gen_sentence = makePrompt()
