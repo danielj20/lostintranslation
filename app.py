@@ -212,7 +212,7 @@ def makePrompt():
         else:
             sentence = sub["subject"] + " " + verb
         pure_sentence = sub["raw_subject"] + " " + pure_verb
-    elif sentence_type == 2:
+    elif sentence_type == 2:  
         # subject verb object
         sub = makeSubject()
         obj = makeObject()
@@ -277,8 +277,7 @@ app = Flask(__name__)
 log = logging.getLogger('werkzeug')
 log.disabled = True
 
-@app.route("/")
-def index():
+while True:
     gen_sentence = makePrompt()
-    print(f"{datetime.datetime.fromtimestamp(time.time())}\nSentence: {gen_sentence['sentence']}\nTranslation: {gen_sentence['translation']}\n")
-    return gen_sentence["translation"]
+    print(f"{datetime.datetime.fromtimestamp(time.time())}\nSentence: {gen_sentence['sentence']}\nTranslation: {gen_sentence['translation']}")
+    input("")
